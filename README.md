@@ -1,122 +1,34 @@
-# Weather Web Application
+# Skyline Weather
 
-![React](https://img.shields.io/badge/Frontend-React-blue?logo=react)
-![Vite](https://img.shields.io/badge/Build-Vite-purple?logo=vite)
-![API](https://img.shields.io/badge/API-External-blueviolet)
-![Status](https://img.shields.io/badge/Status-Production--Ready-success)
-![License](https://img.shields.io/badge/License-MIT-green)
+A responsive, dependency-free weather dashboard built with HTML, CSS, and JavaScript.
 
-<p align="center">
-  <img src="weather-preview.jpg" alt="Weather App Preview" width="850"/>
-</p>
+## Features
 
-## Project Overview
+- Current weather for any searched city
+- 24-hour forecast and 5-day outlook
+- Geolocation weather lookup
+- Celsius/Fahrenheit toggle
+- English and Arabic translations with RTL support
+- Saved cities stored in the browser
+- Responsive layout for desktop and mobile
+- Loading, error, and empty states
 
-A responsive web application that fetches and displays weather information for any city.  
-Built with React and modern frontend practices, the application demonstrates async API integration, dynamic UI updates, error handling, and responsive layout.
+## Run locally
 
-Intended as a real-world weather dashboard experience.
+Serve the folder with any static web server. VS Code Live Server works well. Geolocation requires `localhost` or HTTPS.
 
----
+## Data sources
 
-## Core Features
+- Open-Meteo Geocoding API for city search
+- Open-Meteo Forecast API for weather data
+- OpenStreetMap Nominatim for reverse geocoding
 
-- Search for weather by city name
-- Display current weather conditions
-- Display temperature, humidity, wind speed
-- Error handling for invalid or missing input
-- Mobile-friendly and responsive UI
+No weather API key is required in the frontend.
 
----
+## Project files
 
-## Tech Stack
-
-| Layer | Technology |
-|-------|------------|
-| Frontend | React |
-| Build Tool | Vite |
-| API | OpenWeatherMap (or any weather API) |
-| Styling | CSS / Tailwind (if used) |
-| Dev Tools | ESLint |
-
----
-
-## Architecture
-
-weather.web/
-│
-├── public/
-│   └── weather-preview.png
-│
-├── src/
-│   ├── components/
-│   │   └── WeatherCard.jsx
-│   ├── api/
-│   │   └── weatherService.js
-│   ├── App.jsx
-│   └── styles.css
-│
-├── index.html
-├── package.json
-├── vite.config.js
-└── README.md
----
-
-## Installation
-
-1. Clone the repository
-
-git clone https://github.com/jawasakher/weather.web.git
-2. Install dependencies
-
-npm install
-3. Run the development server
-
-npm run dev
-Local server runs at:
-
-http://localhost:5173
----
-
-## API Configuration
-
-This project uses an external weather API (like OpenWeatherMap).  
-1. Register for an API key  
-2. Create a .env file in the root:
-
-VITE_WEATHER_API_KEY=24041d143f71b730b6b3c8d1ccd92691
-3. Restart the dev server
-
----
-
-## UI Features
-
-- Loading state feedback
-- User input validation
-- City not found / error messages
-- Clean and accessible UI
-
----
-
-## Future Enhancements
-
-- Add 5-day forecast
-- Unit toggle (°C / °F)
-- Geolocation weather
-- Offline caching
-- Animations and UX improvements
-
----
-
-## About the Developer
-
-Jawa Sakher  
-Frontend Engineer focused on scalable UI, API integration, and performance optimization.
-
-GitHub: https://github.com/jawasakher
-
----
-
-## License
-
-This project is licensed under the MIT License.
+```text
+index.html  # Application structure
+style.css   # Responsive visual system
+app.js      # API calls, state, translations, and rendering
+```
