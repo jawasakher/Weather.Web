@@ -34,6 +34,7 @@ export async function fetchWeather(latitude, longitude, location, unit) {
     const timezone = data.utc_offset_seconds;
     const current = {
         name: location.name,
+        coordinates: { latitude, longitude },
         sys: { country: location.country_code, sunrise: Math.floor(Date.parse(data.daily.sunrise[0]) / 1000) - timezone, sunset: Math.floor(Date.parse(data.daily.sunset[0]) / 1000) - timezone },
         dt: Math.floor(Date.now() / 1000), timezone,
         main: { temp: data.current.temperature_2m, feels_like: data.current.apparent_temperature, humidity: data.current.relative_humidity_2m, pressure: Math.round(data.current.pressure_msl) },
