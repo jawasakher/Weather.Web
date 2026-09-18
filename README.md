@@ -2,6 +2,10 @@
 
 A modern, responsive weather dashboard built with **Next.js** and **React**. Skyline Weather allows users to search for cities, view current conditions, explore hourly and daily forecasts, detect weather using their location, and receive practical weather advice through a clean, responsive interface.
 
+## 🌐 Live Demo
+
+🚀 **Try Skyline Weather:** https://weather-web.jawasakher.workers.dev/
+
 ## ✨ Features
 
 - 🔎 Search for current weather by city
@@ -41,8 +45,6 @@ Skyline Weather uses the following public services:
 
 ### Prerequisites
 
-Make sure you have the following installed:
-
 - [Node.js](https://nodejs.org/) 18.18 or later
 - npm
 
@@ -52,17 +54,7 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/jawasakher/Weather.Web.git
-```
-
-Navigate to the project directory:
-
-```bash
 cd Weather.Web
-```
-
-Install dependencies:
-
-```bash
 npm install
 ```
 
@@ -72,7 +64,7 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open http://localhost:3000 in your browser.
 
 > Geolocation generally requires a secure context, such as `localhost` during development or an HTTPS deployment.
 
@@ -93,17 +85,15 @@ npm run start
 ```text
 Weather.Web/
 ├── app/                # Next.js application routes and layout
-├── public/              # Public assets
+├── public/             # Public assets
 ├── src/
-│   ├── main.jsx         # Application entry point or client-side entry
-│   ├── App.jsx          # Main UI, state, translations, and weather advice
-│   └── weatherApi.js    # Weather, geocoding, and location services
+│   ├── main.jsx        # Application entry point or client-side entry
+│   ├── App.jsx         # Main UI, state, translations, and weather advice
+│   └── weatherApi.js   # Weather, geocoding, and location services
 ├── style.css            # Responsive visual styles
 ├── package.json         # Project scripts and dependencies
 └── README.md            # Project documentation
 ```
-
-> The exact file organization may evolve as the application is developed.
 
 ## 📸 Application Highlights
 
