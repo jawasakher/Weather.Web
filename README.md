@@ -9,7 +9,7 @@ A modern, responsive weather dashboard built with **Next.js** and **React**. Sky
 ## 🖥️ Preview
 
 <p align="center">
-  <img src="docs/skyline-weather-preview.jpg" alt="Skyline Weather preview" width="100%" />
+  <img src="skyline-weather-preview.jpg" alt="Skyline Weather preview" width="100%" />
 </p>
 
 ## ✨ Features
