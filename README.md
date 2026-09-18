@@ -6,6 +6,12 @@ A modern, responsive weather dashboard built with **Next.js** and **React**. Sky
 
 🚀 **Try Skyline Weather:** https://weather-web.jawasakher.workers.dev/
 
+## 🖥️ Preview
+
+<p align="center">
+  <img src="docs/skyline-weather-preview.jpg" alt="Skyline Weather preview" width="100%" />
+</p>
+
 ## ✨ Features
 
 - 🔎 Search for current weather by city
