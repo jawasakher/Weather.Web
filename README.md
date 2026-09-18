@@ -1,6 +1,6 @@
 # Skyline Weather
 
-A responsive, dependency-free weather dashboard built with HTML, CSS, and JavaScript.
+A responsive weather dashboard built with React and Vite.
 
 ## Features
 
@@ -12,10 +12,11 @@ A responsive, dependency-free weather dashboard built with HTML, CSS, and JavaSc
 - Saved cities stored in the browser
 - Responsive layout for desktop and mobile
 - Loading, error, and empty states
+- Smart weather advice based on rain, wind, temperature, and sky conditions
 
 ## Run locally
 
-Serve the folder with any static web server. VS Code Live Server works well. Geolocation requires `localhost` or HTTPS.
+Install dependencies with `npm.cmd install`, then run `npm.cmd run dev`. Geolocation requires `localhost` or HTTPS.
 
 ## Data sources
 
@@ -25,10 +26,11 @@ Serve the folder with any static web server. VS Code Live Server works well. Geo
 
 No weather API key is required in the frontend.
 
-## Project files
+## Project structure
 
 ```text
-index.html  # Application structure
-style.css   # Responsive visual system
-app.js      # API calls, state, translations, and rendering
+src/main.jsx       # React entry point
+src/App.jsx        # UI, state, translations, and smart advice
+src/weatherApi.js  # Open-Meteo and geolocation services
+style.css          # Responsive visual system
 ```
