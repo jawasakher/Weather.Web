@@ -1,36 +1,134 @@
-# Skyline Weather
+# 🌤️ Skyline Weather
 
-A responsive weather dashboard built with React and Vite.
+A modern, responsive weather dashboard built with **Next.js** and **React**. Skyline Weather allows users to search for cities, view current conditions, explore hourly and daily forecasts, detect weather using their location, and receive practical weather advice through a clean, responsive interface.
 
-## Features
+## ✨ Features
 
-- Current weather for any searched city
-- 24-hour forecast and 5-day outlook
-- Geolocation weather lookup
-- Celsius/Fahrenheit toggle
-- English and Arabic translations with RTL support
-- Saved cities stored in the browser
-- Responsive layout for desktop and mobile
-- Loading, error, and empty states
-- Smart weather advice based on rain, wind, temperature, and sky conditions
+- 🔎 Search for current weather by city
+- 🌡️ View current temperature and weather conditions
+- 🕒 24-hour hourly forecast
+- 📅 5-day weather outlook
+- 📍 Weather lookup using the user's geolocation
+- 🌍 English and Arabic language support
+- ↔️ Right-to-left (RTL) layout support for Arabic
+- 🌡️ Celsius and Fahrenheit temperature units
+- ⭐ Save favorite cities in the browser
+- 💡 Smart weather advice based on temperature, rain, wind, and sky conditions
+- 📱 Responsive design for desktop, tablet, and mobile devices
+- ⏳ Loading, error, and empty states for a better user experience
 
-## Run locally
+## 🛠️ Tech Stack
 
-Install dependencies with `npm.cmd install`, then run `npm.cmd run dev`. Geolocation requires `localhost` or HTTPS.
+- **Next.js**
+- **React**
+- **React DOM**
+- **JavaScript (ES Modules)**
+- **CSS** for responsive styling
+- **Open-Meteo APIs** for geocoding and weather forecasts
+- **OpenStreetMap Nominatim** for reverse geocoding
 
-## Data sources
+## 🌐 Data Sources
 
-- Open-Meteo Geocoding API for city search
-- Open-Meteo Forecast API for weather data
-- OpenStreetMap Nominatim for reverse geocoding
+Skyline Weather uses the following public services:
 
-No weather API key is required in the frontend.
+- **[Open-Meteo Geocoding API](https://open-meteo.com/en/docs/geocoding-api)** — city and location search
+- **[Open-Meteo Forecast API](https://open-meteo.com/en/docs)** — current weather, hourly forecasts, and daily forecasts
+- **[OpenStreetMap Nominatim](https://nominatim.org/)** — reverse geocoding for location-based weather lookup
 
-## Project structure
+> No weather API key is required for the frontend.
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+- [Node.js](https://nodejs.org/) 18.18 or later
+- npm
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/jawasakher/Weather.Web.git
+```
+
+Navigate to the project directory:
+
+```bash
+cd Weather.Web
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+### Run the development server
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+> Geolocation generally requires a secure context, such as `localhost` during development or an HTTPS deployment.
+
+### Build for production
+
+```bash
+npm run build
+```
+
+### Start the production server
+
+```bash
+npm run start
+```
+
+## 📁 Project Structure
 
 ```text
-src/main.jsx       # React entry point
-src/App.jsx        # UI, state, translations, and smart advice
-src/weatherApi.js  # Open-Meteo and geolocation services
-style.css          # Responsive visual system
+Weather.Web/
+├── app/                # Next.js application routes and layout
+├── public/              # Public assets
+├── src/
+│   ├── main.jsx         # Application entry point or client-side entry
+│   ├── App.jsx          # Main UI, state, translations, and weather advice
+│   └── weatherApi.js    # Weather, geocoding, and location services
+├── style.css            # Responsive visual styles
+├── package.json         # Project scripts and dependencies
+└── README.md            # Project documentation
 ```
+
+> The exact file organization may evolve as the application is developed.
+
+## 📸 Application Highlights
+
+Skyline Weather focuses on a simple and accessible weather experience with:
+
+- Clear weather information at a glance
+- Fast city search and location detection
+- Localized Arabic and English interfaces
+- Responsive layouts for different screen sizes
+- Practical recommendations based on current weather conditions
+
+## 🔐 Privacy & API Notes
+
+- Saved cities are stored locally in the user's browser.
+- The application does not require a private weather API key.
+- Location access is requested through the browser only when the user chooses to use geolocation.
+- API availability and usage policies are controlled by the respective third-party services.
+
+## 📄 License
+
+This project is available for educational and portfolio purposes. Add a specific license if you plan to distribute or reuse the project under defined terms.
+
+## 👩‍💻 Author
+
+**Jawa Sakher**
+
+- GitHub: [@jawasakher](https://github.com/jawasakher)
+- Portfolio: [Jawa Sakher Portfolio](https://jawasakher-portfolio.jawasakher.workers.dev/)
