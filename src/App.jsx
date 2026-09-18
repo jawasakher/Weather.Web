@@ -29,6 +29,7 @@ function App() {
     const [favorites, setFavorites] = useState([]);
     const [hydrated, setHydrated] = useState(false);
     const [draggedFavorite, setDraggedFavorite] = useState(null);
+    const [showWelcome, setShowWelcome] = useState(true);
 
     const t = key => translations[language][key] || key;
     const temp = value => `${Math.round(value)}${unit === "metric" ? "°C" : "°F"}`;
@@ -78,6 +79,8 @@ function App() {
     const outdoor = current && forecast ? getOutdoorWindow(forecast, unit, t, formatTime) : null;
     const backgroundWeather = current?.weather[0].main || "map";
 
+    if (showWelcome) return <WelcomeScreen language={language} onEnter={() => setShowWelcome(false)} onLanguage={toggleLanguage} />;
+
     return <>
         <WeatherBackground weather={backgroundWeather} />
         <main className="app-shell">
@@ -96,6 +99,49 @@ function App() {
         {favoritesOpen && <aside className="favorites-panel"><div className="section-heading"><h2>{t("favorites")}</h2><button className="close-button" onClick={() => setFavoritesOpen(false)}>×</button></div><p className="favorites-hint">{t("reorderHint")}</p>{favorites.length ? favorites.map(item => <button className="favorite-item" draggable key={item} onDragStart={() => setDraggedFavorite(item)} onDragOver={event => event.preventDefault()} onDrop={() => reorderFavorites(item)} onClick={() => { setInput(item); loadCity(item); }}>{item}</button>) : <p className="empty-favorites">{t("noFavorites")}</p>}</aside>}
         </main>
     </>;
+}
+
+function WelcomeScreen({ language, onEnter, onLanguage }) {
+    const isArabic = language === "ar";
+    const copy = isArabic ? {
+        kicker: "Skyline Weather / 01",
+        title: "السماء أوضح من أي وقت.",
+        body: "لوحة طقس ذكية تجمع التفاصيل التي تحتاجها لتخطط ليومك بثقة.",
+        enter: "افتح لوحة الطقس",
+        language: "EN",
+        live: "بيانات مباشرة",
+        forecast: "توقعات الساعات والأيام",
+        advice: "نصيحة ذكية ليومك",
+        map: "خريطة تفاعلية",
+        preview: "لمحة سريعة",
+        city: "لندن، المملكة المتحدة",
+        condition: "سماء صافية",
+        note: "كل ما يهمك عن الطقس، في مكان واحد."
+    } : {
+        kicker: "Skyline Weather / 01",
+        title: "See the sky clearly.",
+        body: "A focused weather dashboard with the details you need to plan your day with confidence.",
+        enter: "Open weather dashboard",
+        language: "عربي",
+        live: "Live conditions",
+        forecast: "Hourly and daily outlook",
+        advice: "Smart advice for your day",
+        map: "Interactive location map",
+        preview: "A quick look",
+        city: "London, United Kingdom",
+        condition: "Clear skies",
+        note: "Everything that matters about the weather, in one place."
+    };
+
+    return <main className="welcome-screen">
+        <div className="welcome-noise" aria-hidden="true" />
+        <header className="welcome-topbar"><a className="brand" href="./" aria-label="Skyline Weather home"><span className="brand-mark">S</span><span>Skyline</span></a><button className="welcome-language" onClick={onLanguage}>{copy.language}</button></header>
+        <section className="welcome-content">
+            <div className="welcome-copy"><p className="welcome-kicker">{copy.kicker}</p><h1>{copy.title}</h1><p className="welcome-body">{copy.body}</p><button className="welcome-enter" onClick={onEnter}><span>{copy.enter}</span><span aria-hidden="true">↗</span></button><p className="welcome-note">{copy.note}</p></div>
+            <div className="welcome-preview" aria-label={copy.preview}><div className="preview-orbit preview-orbit--one" /><div className="preview-orbit preview-orbit--two" /><div className="preview-label">{copy.preview}</div><div className="preview-card"><div className="preview-card-top"><span>{copy.city}</span><span>09:41</span></div><div className="preview-weather"><span className="preview-sun">☼</span><div><strong>22°</strong><span>{copy.condition}</span></div></div><div className="preview-bars"><i /><i /><i /><i /><i /></div><div className="preview-footer"><span>{copy.live}</span><strong>+12%</strong></div></div></div>
+        </section>
+        <section className="welcome-features" aria-label={copy.preview}><span><b>01</b>{copy.live}</span><span><b>02</b>{copy.forecast}</span><span><b>03</b>{copy.advice}</span><span><b>04</b>{copy.map}</span></section>
+    </main>;
 }
 
 function WeatherBackground({ weather }) {
